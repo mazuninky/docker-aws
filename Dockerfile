@@ -1,12 +1,12 @@
 FROM golang:latest AS builder
 
-RUN go get -u github.com/uber/makisu/bin/makisu && makisu version
+RUN go get github.com/uber/makisu/bin/makisu
 
 FROM alpine
 
 LABEL maintainer="Mazunin Konstantin <mazuninky@gmail.com>"
 
-RUN apk add --no-cache python; \
+RUN apk add --no-cache python libc6-compat; \
 #############
 ## AWS CLI ##
 #############
@@ -19,4 +19,4 @@ RUN apk add --no-cache python; \
 #############
 ## Makisu  ##
 #############
-COPY --from=builder /go/bin /usr/local/bin
+COPY --from=builder /go/bin/makisu /usr/local/bin/makisu
