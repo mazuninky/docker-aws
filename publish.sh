@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker push mazuninky/docker-aws
+docker push mazuninky/img-aws-docker
