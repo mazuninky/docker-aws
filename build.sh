@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build . --file Dockerfile --tag mazuninky/img-aws-docker
+docker build . --file Dockerfile --tag mazuninky/makisu-aws
